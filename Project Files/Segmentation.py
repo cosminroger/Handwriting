@@ -33,40 +33,7 @@ def prepare(filepath):
 	img = cv2.imread(filepath, cv2.IMREAD_GRAYSCALE)
 	new = cv2.resize(img,(size,size),interpolation = cv2.INTER_AREA)
 	return new.reshape(-1,size,size,1)
-
-
-# def prepare(filepath):
-# 	image = Image.open(filepath)
-# 	fixedSize = 32
-# 	x = 0
-# 	y = 0
-# 	if image.size[0] > image.size[1]:
-# 		xPercent = fixedSize/float(image.size[0])
-# 		ySize = int(float(image.size[1])*float(xPercent))
-# 		image = image.resize((fixedSize,ySize), PIL.Image.NEAREST)
-# 		npImage = np.array(image)
-# 		resized = cv2.resize(npImage, (32,32), interpolation = cv2.INTER_AREA)
-# 		resized = Image.fromarray(resized)
-		
-# 		return resized.reshape(-1,fixedSize,fixedSize,1)
-# 		#resized.save("D:\\A_University_Blocks\\Block_2b\\Handwriting_Recognition\\Data\\Code_#2\\test.png")
-# 	else:
-# 		yPercent = fixedSize/float(image.size[1])
-# 		xSize = int(float(image.size[0])*float(yPercent))
-# 		image = image.resize((xSize,fixedSize), PIL.Image.NEAREST)
-# 		npImage = np.array(image)
-# 		resized = cv2.resize(npImage, (32,32), interpolation = cv2.INTER_AREA)
-# 		resized = np.array(resized)
-# 		#print(type(resized))
-# 		return resized.reshape(-1,fixedSize,fixedSize,1)
-# 		#resized.save("D:\\A_University_Blocks\\Block_2b\\Handwriting_Recognition\\Data\\Code_#2\\test.png")
-
-
-
-
-
-
-            
+         
 
 
 
