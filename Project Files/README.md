@@ -9,8 +9,17 @@ In addition to these files, two trained models are also needed in the same folde
 
 - Once all files are in the same folder, the following command can be used to run the program:
 ```sh
-py Segmentation.py path/to/test/images/
+py Segmentation.py images/
 ```
+This command works if the path is to the folder with the images and not to the image directly.
+
+> Warning - If there is space " " in path, commands will not work.
+
+
+## Files
+
+- Segmentation.py is the main script that runs the program
+- Both model files are the trained models for Character and dialect Recognition
 
 
 
