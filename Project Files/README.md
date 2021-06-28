@@ -10,3 +10,11 @@ In addition to these files, two trained models are also needed in the same folde
 ```sh
 py Segmentation.py path/to/test/images/
 ```
+
+
+
+## Result
+
+- Result folder is created which includes the text files for recognition and classification
+- Segmented_Lines folder is created which has cropped lines per image for character recognition
+- Segmented_Characters_Per_Lines folder is created to save the cropped characters per line per image.
