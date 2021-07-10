@@ -104,7 +104,14 @@ for img_number in range(img_list_len):
 	os.mkdir(curr_dir+"/Segmented_Lines/"+str(img_number))
 
 	for x in range(len(peaks)):     #Crop each line and save as different image
-		img3 = img[peaks[x] - h_w:peaks[x] + h_w, 0:width]        #Up to down, Right to left
+		if (peaks[x] - h_w < 0) and (peaks[x] + h_w > height):
+			img3 = img[0:height, 0:width]
+		elif peaks[x] - h_w < 0:
+			img3 = img[0:peaks[x] + h_w, 0:width]        #Up to down, Right to left
+		elif peaks[x] + h_w > height:
+			img3 = img[peaks[x] - h_w:height, 0:width]
+		else:
+			img3 = img[peaks[x] - h_w:peaks[x] + h_w, 0:width]        #Up to down, Right to left
 		plt.imshow(img3, cmap="gray")
 		plt.axis('off')
 		plt.savefig('Segmented_Lines/'+str(img_number)+'/Line_'+str(x+1)+'_image.png', bbox_inches='tight',pad_inches = 0,dpi=300)
